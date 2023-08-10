@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "Quartile LLC"
+client_id = "4c012c6ec74b98a97d97b35452ceddf9"
+application_url = "https://app-qd-ecomm-connect.azurewebsites.net"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,read_product_listings,read_inventory,read_orders,read_products,read_content"
+
+[auth]
+redirect_urls = [
+  "https://app-qd-ecomm-connect.azurewebsites.net/auth/callback",
+  "https://app-qd-ecomm-connect.azurewebsites.net/auth/shopify/callback",
+  "https://app-qd-ecomm-connect.azurewebsites.net/api/auth/callback",
+  "https://gads.azure-api.net/sf-connect/redirect-url"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[webhooks.privacy_compliance]
+customer_deletion_url = "https://google-auth-adsmerchant.azurewebsites.net/customers/redact"
+customer_data_request_url = "https://google-auth-adsmerchant.azurewebsites.net/customers/data_request"
+shop_deletion_url = "https://google-auth-adsmerchant.azurewebsites.net/shop/redact"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quartile-store-test.myshopify.com"
